@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+      integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>url-shortener</title>
+  </head>
+  <body>
+    <main>
+      <h1>This is a url-shortener</h1>
+      <section>
+        <form action="/" method="post">
+          <div>
+            <label for="urlInput">Enter your url here</label>
+            <input
+              type="url"
+              id="urlInput"
+              name="urlInput"
+              autocomplete="false"
+              required
+            />
+          </div>
+          <div><button type="submit">shrink!!!</button></div>
+        </form>
+      </section>
+      <% if(shrinkedUrl){%>
+      <h6>Your minified url :</h6>
+      <a href="<%= shrinkedUrl %>" id="shrinkedUrl"><%= shrinkedUrl %></a>
+      <%}%>
+    </main>
+  </body>
+</html>
