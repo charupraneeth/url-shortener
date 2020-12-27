@@ -24,6 +24,7 @@
               id="urlInput"
               name="urlInput"
               autocomplete="false"
+              placeholder="www.example.com"
               required
             />
           </div>
@@ -32,8 +33,11 @@
       </section>
       <% if(shrinkedUrl){%>
       <h6>Your minified url :</h6>
-      <a href="<%= shrinkedUrl %>" id="shrinkedUrl"><%= shrinkedUrl %></a>
+      <a href="<%= shrinkedUrl %>" target="_blank" id="shrinkedUrl"
+        ><%= shrinkedUrl %></a
+      >
       <%}%>
     </main>
+    <script src="./script.js"></script>
   </body>
 </html>

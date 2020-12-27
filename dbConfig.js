@@ -14,6 +14,7 @@ const URLSchema = new Schema({
   created: {
     type: Date,
     default: Date.now(),
+    indexes: { expires: "300s" },
   },
   url: {
     type: String,
@@ -23,7 +24,7 @@ const URLSchema = new Schema({
   },
 });
 
-URLSchema.indexes({ created: 1 }, { expireAfterSeconds: 60 * 60 * 24 * 2 });
+// URLSchema.indexes({ created: 1 }, { expireAfterSeconds: 60 * 60 * 24 * 2 });
+// URLSchema.indexes({ created: 1 }, { expireAfterSeconds: 600 });
 const URL = mongoose.model("URLCollection", URLSchema);
-
 module.exports = URL;
